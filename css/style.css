@@ -594,7 +594,7 @@ html {
 }
 .services__item-title {
   flex: 1 1 auto;
-  margin-bottom: 45px;
+  margin-bottom: 20px;
   font-size: 18px;
   line-height: 125%;
   font-weight: 700
