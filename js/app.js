@@ -3426,7 +3426,7 @@
                 992: {
                     slidesPerView: 3,
                     spaceBetween: 20,
-                    centeredSlides: false,
+                    centeredSlides: true,
                     centerInsufficientSlides: true
                 },
                 1280: {

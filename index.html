@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240907220254">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240909120735">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,7 +97,11 @@
 			<div id="main" class="preview">
 				<div class="container">
 					<div class="preview__image">
-						<img src="img/main.webp" alt="Image">
+						<picture>
+							<source media="(min-width: 768px)" srcset="img/main.webp">
+							<source media="(max-width: 767px)" srcset="img/main-mob.webp">
+							<img src="img/main.webp" alt="Описание изображения">
+						</picture>
 					</div>
 				</div>
 			</div>
@@ -185,7 +189,7 @@
 
 					<div class="tariff__slider swiper">
 						<div class="swiper-wrapper">
-							<div class="tariff__item swiper-slide one">
+							<div class="tariff__item swiper-slide">
 								<img src="img/tariff-bg.webp" alt="" class="tariff__item-image">
 
 								<div class="tariff__item-content">
@@ -200,7 +204,7 @@
 								</div>
 							</div>
 
-							<div class="tariff__item swiper-slide two">
+							<div class="tariff__item swiper-slide">
 								<img src="img/tariff-bg.webp" alt="" class="tariff__item-image">
 
 								<div class="tariff__item-content">
@@ -215,7 +219,7 @@
 								</div>
 							</div>
 
-							<div class="tariff__item swiper-slide three">
+							<div class="tariff__item swiper-slide">
 								<img src="img/tariff-bg.webp" alt="" class="tariff__item-image">
 
 								<div class="tariff__item-content">
@@ -247,7 +251,7 @@
 									<img src="img/services/image01.webp" alt="Image">
 								</div>
 								<div class="services__item-title">Підключення оптоволоконної мережі</div>
-								<div class="services__item-cost">60 <sup>₴</sup></div>
+								<div class="services__item-cost">60 <span>грн.</span></div>
 							</div>
 
 							<div class="services__item swiper-slide">
@@ -255,7 +259,7 @@
 									<img src="img/services/image02.webp" alt="Image">
 								</div>
 								<div class="services__item-title">Відновлення налаштувань підключення</div>
-								<div class="services__item-cost">100 <sup>₴</sup></div>
+								<div class="services__item-cost">100 <span>грн.</span></div>
 							</div>
 
 							<div class="services__item swiper-slide">
@@ -263,7 +267,7 @@
 									<img src="img/services/image03.webp" alt="Image">
 								</div>
 								<div class="services__item-title">Встановлення + налаштування Microsoft Office з клієнтського диска</div>
-								<div class="services__item-cost">50 <sup>₴</sup></div>
+								<div class="services__item-cost">50 <span>грн.</span></div>
 							</div>
 
 							<div class="services__item swiper-slide">
@@ -271,7 +275,7 @@
 									<img src="img/services/image04.webp" alt="Image">
 								</div>
 								<div class="services__item-title">Встановлення Windows з ліцензійного диска клієнта</div>
-								<div class="services__item-cost">150 <sup>₴</sup></div>
+								<div class="services__item-cost">150 <span>грн.</span></div>
 							</div>
 
 							<div class="services__item swiper-slide">
@@ -279,7 +283,7 @@
 									<img src="img/services/image01.webp" alt="Image">
 								</div>
 								<div class="services__item-title">Підключення оптоволоконної мережі</div>
-								<div class="services__item-cost">60 <sup>₴</sup></div>
+								<div class="services__item-cost">60 <span>грн.</span></div>
 							</div>
 
 							<div class="services__item swiper-slide">
@@ -287,7 +291,7 @@
 									<img src="img/services/image02.webp" alt="Image">
 								</div>
 								<div class="services__item-title">Відновлення налаштувань підключення</div>
-								<div class="services__item-cost">100 <sup>₴</sup></div>
+								<div class="services__item-cost">100 <span>грн.</span></div>
 							</div>
 
 							<div class="services__item swiper-slide">
@@ -295,7 +299,7 @@
 									<img src="img/services/image03.webp" alt="Image">
 								</div>
 								<div class="services__item-title">Встановлення + налаштування Microsoft Office з клієнтського диска</div>
-								<div class="services__item-cost">50 <sup>₴</sup></div>
+								<div class="services__item-cost">50 <span>грн.</span></div>
 							</div>
 						</div>
 
@@ -348,7 +352,7 @@
 			</footer>
 		</main>
 	</div>
-	<script src="js/app.min.js?_v=20240907220254"></script>
+	<script src="js/app.min.js?_v=20240909120735"></script>
 </body>
 
 </html>
