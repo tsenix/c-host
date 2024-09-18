@@ -468,16 +468,22 @@ html {
   background: linear-gradient(to bottom right,#00aa25 0,#26a4c0 30%,#a969d5 60%,#69d587 100%)
 }
 .tariff__item.flip .tariff__item-wrapper {
-  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
   cursor: pointer
+}
+.tariff__item.flip .tariff__item-front {
+  z-index: 1
+}
+.tariff__item.flip .tariff__item-back {
+  z-index: 2
 }
 .tariff__item-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transition: -webkit-transform .5s ease;
   transition: transform .5s ease;
   transition: transform .5s ease,-webkit-transform .5s ease
@@ -487,14 +493,15 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   padding: 45px 12px 60px;
   text-align: center;
   color: #fff;
   border-radius: 36px;
   box-shadow: 0 0 20px rgba(167,188,201,.53);
-  overflow: hidden
+  overflow: hidden;
+  transition: all .5s ease
 }
 .tariff__item-back::after,
 .tariff__item-front::after {
@@ -517,9 +524,13 @@ html {
   height: calc(100% - 40px);
   background: linear-gradient(to bottom,rgba(27,29,33,0) 0,#0e2451 100%)
 }
+.tariff__item-front {
+  z-index: 2
+}
 .tariff__item-back {
   -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg)
+  transform: rotateY(180deg);
+  z-index: 1
 }
 .tariff__item-list {
   display: flex;
