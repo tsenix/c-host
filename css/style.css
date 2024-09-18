@@ -450,15 +450,53 @@ html {
 }
 .tariff__item {
   position: relative;
-  padding: 45px 12px 60px;
   width: 280px;
+  height: 450px;
+  -webkit-perspective: 1000px;
+  perspective: 1000px
+}
+.tariff__item:nth-child(1) .tariff__item-back::after,
+.tariff__item:nth-child(1) .tariff__item-front::after {
+  background: linear-gradient(to bottom right,#f8ee00 0,#c09526 30%,#d5ca69 60%,#1b1d21 100%)
+}
+.tariff__item:nth-child(2) .tariff__item-back::after,
+.tariff__item:nth-child(2) .tariff__item-front::after {
+  background: linear-gradient(to bottom right,#ae4db2 0,#c02675 30%,#a969d5 60%,#1b1d21 100%)
+}
+.tariff__item:nth-child(3) .tariff__item-back::after,
+.tariff__item:nth-child(3) .tariff__item-front::after {
+  background: linear-gradient(to bottom right,#00aa25 0,#26a4c0 30%,#a969d5 60%,#69d587 100%)
+}
+.tariff__item.flip .tariff__item-wrapper {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg)
+}
+.tariff__item-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease,-webkit-transform .5s ease
+}
+.tariff__item-back,
+.tariff__item-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 45px 12px 60px;
   text-align: center;
   color: #fff;
   border-radius: 36px;
   box-shadow: 0 0 20px rgba(167,188,201,.53);
   overflow: hidden
 }
-.tariff__item::after {
+.tariff__item-back::after,
+.tariff__item-front::after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -467,7 +505,8 @@ html {
   width: 100%;
   height: 100%
 }
-.tariff__item::before {
+.tariff__item-back::before,
+.tariff__item-front::before {
   content: "";
   position: absolute;
   z-index: 2;
@@ -477,14 +516,28 @@ html {
   height: calc(100% - 40px);
   background: linear-gradient(to bottom,rgba(27,29,33,0) 0,#0e2451 100%)
 }
-.tariff__item:nth-child(1)::after {
-  background: linear-gradient(to bottom right,#f8ee00 0,#c09526 30%,#d5ca69 60%,#1b1d21 100%)
+.tariff__item-back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg)
 }
-.tariff__item:nth-child(2)::after {
-  background: linear-gradient(to bottom right,#ae4db2 0,#c02675 30%,#a969d5 60%,#1b1d21 100%)
+.tariff__item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left
 }
-.tariff__item:nth-child(3)::after {
-  background: linear-gradient(to bottom right,#00aa25 0,#26a4c0 30%,#a969d5 60%,#69d587 100%)
+.tariff__item-item {
+  display: flex;
+  align-items: center;
+  gap: 6px
+}
+.tariff__item-item img {
+  width: 24px;
+  height: 24px
+}
+.tariff__item-item span {
+  font-size: 16px;
+  line-height: 24px
 }
 .tariff__item-image {
   position: absolute;
@@ -954,7 +1007,8 @@ html {
   .tariff__subtitle {
     margin-bottom: 15px
   }
-  .tariff__item {
+  .tariff__item-back,
+  .tariff__item-front {
     padding: 50px 14px
   }
   .tariff__item-title {

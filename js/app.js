@@ -3588,6 +3588,17 @@
             });
         }));
     }));
+    const cards = document.querySelectorAll(".tariff__item");
+    for (const card of cards) {
+        const button = card.querySelector(".tariff__item-button");
+        button.addEventListener("click", (e => {
+            e.stopPropagation();
+            card.classList.add("flip");
+        }));
+        card.addEventListener("click", (() => {
+            if (card.classList.contains("flip")) card.classList.remove("flip");
+        }));
+    }
     window["FLS"] = true;
     menuInit();
 })();
