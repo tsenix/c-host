@@ -3593,7 +3593,7 @@
         const button = card.querySelector(".tariff__item-button");
         button.addEventListener("click", (e => {
             e.stopPropagation();
-            card.classList.add("flip");
+            card.classList.toggle("flip");
         }));
         card.addEventListener("click", (() => {
             if (card.classList.contains("flip")) card.classList.remove("flip");

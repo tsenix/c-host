@@ -469,7 +469,8 @@ html {
 }
 .tariff__item.flip .tariff__item-wrapper {
   -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg)
+  transform: rotateY(180deg);
+  cursor: pointer
 }
 .tariff__item-wrapper {
   position: relative;
