@@ -455,16 +455,16 @@ html {
   -webkit-perspective: 1000px;
   perspective: 1000px
 }
-.tariff__item:nth-child(1) .tariff__item-back::after,
-.tariff__item:nth-child(1) .tariff__item-front::after {
+.tariff__item:nth-child(3n) .tariff__item-back::after,
+.tariff__item:nth-child(3n) .tariff__item-front::after {
   background: linear-gradient(to bottom right,#f8ee00 0,#c09526 30%,#d5ca69 60%,#1b1d21 100%)
 }
-.tariff__item:nth-child(2) .tariff__item-back::after,
-.tariff__item:nth-child(2) .tariff__item-front::after {
+.tariff__item:nth-child(3n+1) .tariff__item-back::after,
+.tariff__item:nth-child(3n+1) .tariff__item-front::after {
   background: linear-gradient(to bottom right,#ae4db2 0,#c02675 30%,#a969d5 60%,#1b1d21 100%)
 }
-.tariff__item:nth-child(3) .tariff__item-back::after,
-.tariff__item:nth-child(3) .tariff__item-front::after {
+.tariff__item:nth-child(3n+2) .tariff__item-back::after,
+.tariff__item:nth-child(3n+2) .tariff__item-front::after {
   background: linear-gradient(to bottom right,#00aa25 0,#26a4c0 30%,#a969d5 60%,#69d587 100%)
 }
 .tariff__item.flip .tariff__item-wrapper {
@@ -477,6 +477,22 @@ html {
 }
 .tariff__item.flip .tariff__item-back {
   z-index: 2
+}
+.tariff__item.tv {
+  height: 480px
+}
+.tariff__item.tv .tariff__item-back .tariff__item-image,
+.tariff__item.tv .tariff__item-front .tariff__item-image {
+  z-index: 1;
+  opacity: 1
+}
+.tariff__item.tv .tariff__item-back::after,
+.tariff__item.tv .tariff__item-front::after {
+  display: none
+}
+.tariff__item.tv .tariff__item-back::before,
+.tariff__item.tv .tariff__item-front::before {
+  background: linear-gradient(to bottom,rgba(27,29,33,0) 0,rgba(14,36,81,.8) 40%)
 }
 .tariff__item-wrapper {
   position: relative;
@@ -708,7 +724,6 @@ html {
 .contacts__content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px
 }
 .contacts__item {
@@ -733,6 +748,14 @@ html {
   background-color: #ffc40c;
   border: 1px solid #ffc40c
 }
+.contacts__item.schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  background-color: rgba(255,255,255,.7);
+  border: 1px solid rgba(255,255,255,.7)
+}
 .contacts__item svg {
   width: 24px;
   height: 24px;
@@ -745,6 +768,15 @@ html {
   white-space: nowrap;
   color: #fff;
   transition: all .5s ease
+}
+.contacts__item-title {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700
+}
+.contacts__item-schedule {
+  font-size: 15px;
+  line-height: 18px
 }
 .contacts__image {
   max-width: 340px
@@ -924,7 +956,9 @@ html {
     align-items: center
   }
   .contacts__item {
-    padding: 12px 40px
+    padding: 12px 30px;
+    width: 360px;
+    max-width: none
   }
   .contacts__item:hover {
     background-color: #fff
