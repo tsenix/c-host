@@ -481,18 +481,21 @@ html {
 .tariff__item.tv {
   height: 480px
 }
-.tariff__item.tv .tariff__item-back .tariff__item-image,
-.tariff__item.tv .tariff__item-front .tariff__item-image {
-  z-index: 1;
-  opacity: 1
-}
-.tariff__item.tv .tariff__item-back::after,
-.tariff__item.tv .tariff__item-front::after {
-  display: none
-}
 .tariff__item.tv .tariff__item-back::before,
 .tariff__item.tv .tariff__item-front::before {
   background: linear-gradient(to bottom,rgba(27,29,33,0) 0,rgba(14,36,81,.8) 40%)
+}
+.tariff__item.tv:nth-child(3n) .tariff__item-back::after,
+.tariff__item.tv:nth-child(3n) .tariff__item-front::after {
+  background: url(../img/tariff-tv-bg01.webp) center/cover no-repeat
+}
+.tariff__item.tv:nth-child(3n+1) .tariff__item-back::after,
+.tariff__item.tv:nth-child(3n+1) .tariff__item-front::after {
+  background: url(../img/tariff-tv-bg02.webp) center/cover no-repeat
+}
+.tariff__item.tv:nth-child(3n+2) .tariff__item-back::after,
+.tariff__item.tv:nth-child(3n+2) .tariff__item-front::after {
+  background: url(../img/tariff-tv-bg03.webp) center/cover no-repeat
 }
 .tariff__item-wrapper {
   position: relative;
